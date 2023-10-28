@@ -1,0 +1,12 @@
+.settings/
+bin/
+tmp/
+target/
+.metadata
+.classpath
+.project
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties

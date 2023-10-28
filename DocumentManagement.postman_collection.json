@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "22f31305-858c-4b8c-8a69-6b91e7a301ed",
+		"name": "DocumentManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30805481"
+	},
+	"item": [
+		{
+			"name": "uploadDocument",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/user/Pictures/Screenshots/image.png"
+						},
+						{
+							"key": "type",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/document/upload/1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"document",
+						"upload",
+						"1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDocumentsByUserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/document/user/1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"document",
+						"user",
+						"1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDocumentType",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/document/type",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"document",
+						"type"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downloadDocument",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/document/download/1234/file/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"document",
+						"download",
+						"1234",
+						"file",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

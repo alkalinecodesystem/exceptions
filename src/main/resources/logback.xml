@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="CONSOLE_LOG_CHARSET" value="UTF-8" />
+	<include
+		resource="org/springframework/boot/logging/logback/default.xml" />
+	<include
+		resource="org/springframework/boot/logging/logback/console-appender.xml" />
+	<root level="INFO">
+		<appender name="CONSOLE"
+			class="ch.qos.logback.core.ConsoleAppender">
+			<layout>
+				<Pattern>%d{HH:mm:ss} %p %X{TRACE-ID} %c - %m%n</Pattern>
+			</layout>
+		</appender>
+	</root>
+	<logger name="org.springframework.web" level="INFO" />
+</configuration>
