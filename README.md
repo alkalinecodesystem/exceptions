@@ -15,6 +15,6 @@ sudo docker exec -it mysql-db mysql -p <br />
 show databases; <br />
 use demo; <br />
 insert into document_type(id,name) values(1,'type'); <br />
-## Test the endpoints importing collection to Postman
+## Test the endpoints with this Postman collection
 DocumentManagement.postman_collection.json
-# exceptions
+
