@@ -54,6 +54,8 @@ public class ManageDocumentsController {
 			logger.error(ex.getMessage());
 			// return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR);
 			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage(), ex);
+		} finally {
+			logger.info("documentsByUser");
 		}
 	}
 
@@ -67,6 +69,8 @@ public class ManageDocumentsController {
 			logger.error(ex.getMessage());
 			// return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR);
 			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage(), ex);
+		} finally {
+			logger.info("documentTypes");
 		}
 	}
 
@@ -85,14 +89,16 @@ public class ManageDocumentsController {
 			logger.error(ex.getMessage());
 			// return ResponseEntity.status(HttpStatus.BAD_REQUEST);
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage(), ex);
-		}catch(UploadFileException ex) {
+		} catch (UploadFileException ex) {
 			logger.error(ex.getMessage());
 			// return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE);
-			throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, ex.getMessage(), ex);	
+			throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, ex.getMessage(), ex);
 		} catch (Exception ex) {
 			logger.error(ex.getMessage());
 			// return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR);
 			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage(), ex);
+		} finally {
+			logger.info("fileUpload");
 		}
 	}
 
@@ -105,7 +111,7 @@ public class ManageDocumentsController {
 
 			HttpHeaders header = new HttpHeaders();
 			header.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + documentData.getFilename());
-			
+
 			ByteArrayResource resource = new ByteArrayResource(documentData.getContent());
 
 			return ResponseEntity.ok().headers(header).contentLength(documentData.getContent().length)
@@ -123,6 +129,8 @@ public class ManageDocumentsController {
 			logger.error(ex.getMessage());
 			// return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR);
 			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage(), ex);
+		} finally {
+			logger.info("downloadFile");
 		}
 	}
 
